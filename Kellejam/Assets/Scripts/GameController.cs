@@ -66,6 +66,8 @@ public class GameController : MonoBehaviour
         
         int computerButtonIndex1;
         int computerButtonIndex2;
+
+
         do
         {
             computerButtonIndex1 = Random.Range(0, buttonList.Length);
@@ -85,7 +87,7 @@ public class GameController : MonoBehaviour
         {
             
 
-            if (playerButton == computerButton1)
+            if (playerButton = computerButton1)
             {
                 
                 playerButton.OverlapButton(playerButton.overlapColor);
@@ -94,7 +96,7 @@ public class GameController : MonoBehaviour
                 Debug.Log("Player-chosen button overlaps with a randomly chosen button.");
             }
 
-            else if (playerButton == computerButton2)
+            else if (playerButton = computerButton2)
             {
 
                 playerButton.OverlapButton(playerButton.overlapColor);
