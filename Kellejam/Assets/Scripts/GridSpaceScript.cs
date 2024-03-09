@@ -7,6 +7,8 @@ public class GridSpaceScript : MonoBehaviour
 {
     public Button button;
     public Text buttonText;
+    private Image buttonImage;
+    public Color defaultColor = Color.blue;
     public Color highlightColor = Color.yellow;
     public Color overlapColor = Color.red;
 
@@ -16,6 +18,12 @@ public class GridSpaceScript : MonoBehaviour
     private void Start()
     {
         button.interactable = true;
+    }
+
+    private void Awake()
+    {
+        buttonImage = GetComponent<Image>();
+        defaultColor = buttonImage.color; 
     }
 
     public void SetSpace()
@@ -50,7 +58,13 @@ public class GridSpaceScript : MonoBehaviour
 
     public void OverlapButton(Color overlapColor)
     {
-        button.image.color = overlapColor;
+        buttonImage.color = overlapColor;
+        Debug.Log("OverlapButton called - Color changed to: " + overlapColor);
+    }
+
+    public void ResetButtonColor(Color defaultColor)
+    {
+        buttonImage.color = defaultColor;
         Debug.Log("OverlapButton called - Color changed to: " + overlapColor);
     }
 

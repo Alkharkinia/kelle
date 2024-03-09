@@ -26,7 +26,7 @@ public class GameController : MonoBehaviour
             if (gridSpace != null)
             {
                 gridSpace.SetGameControllerReference(this);
-                if (i == 0)
+                if (i == 1)
                 {
                     playerButton = gridSpace;
                 }
@@ -63,10 +63,8 @@ public class GameController : MonoBehaviour
     
     private void SelectAndHighlightButtons()
     {
-        
         int computerButtonIndex1;
         int computerButtonIndex2;
-
 
         do
         {
@@ -74,37 +72,30 @@ public class GameController : MonoBehaviour
             computerButtonIndex2 = Random.Range(0, buttonList.Length);
         } while (computerButtonIndex1 == computerButtonIndex2);
 
-        
         GridSpaceScript computerButton1 = buttonList[computerButtonIndex1].GetComponentInParent<GridSpaceScript>();
         GridSpaceScript computerButton2 = buttonList[computerButtonIndex2].GetComponentInParent<GridSpaceScript>();
 
-        
         computerButton1.HighlightButton(computerButton1.highlightColor);
         computerButton2.HighlightButton(computerButton2.highlightColor);
 
-        
         if (playerButton != null)
         {
-            
-
-            if (playerButton = computerButton1)
+            if (playerButton == computerButton1)
             {
-                
                 playerButton.OverlapButton(playerButton.overlapColor);
-                computerButton1.OverlapButton(computerButton1.overlapColor);
-                computerButton2.HighlightButton(computerButton2.highlightColor);
+                
                 Debug.Log("Player-chosen button overlaps with a randomly chosen button.");
             }
-
-            else if (playerButton = computerButton2)
+            else if (playerButton == computerButton2)
+            {
+                playerButton.OverlapButton(playerButton.overlapColor);
+                
+                Debug.Log("Player-chosen button overlaps with a randomly chosen button.");
+            }
+            else
             {
 
-                playerButton.OverlapButton(playerButton.overlapColor);
-                computerButton2.OverlapButton(computerButton2.overlapColor);
-                computerButton1.HighlightButton(computerButton1.highlightColor);
-                Debug.Log("Player-chosen button overlaps with a randomly chosen button.");
-
-
+                Debug.Log("No overlap detected.");
             }
         }
         else
