@@ -12,6 +12,8 @@ public class GridSpaceScript : MonoBehaviour
     public Color highlightColor = Color.yellow;
     public Color overlapColor = Color.red;
 
+  
+
     private GameController gameController;
     private static bool buttonPressed = false;
 
@@ -62,10 +64,6 @@ public class GridSpaceScript : MonoBehaviour
         Debug.Log("OverlapButton called - Color changed to: " + overlapColor);
     }
 
-    public void ResetButtonColor(Color defaultColor)
-    {
-        buttonImage.color = defaultColor;
-        Debug.Log("OverlapButton called - Color changed to: " + overlapColor);
-    }
+
 
 }

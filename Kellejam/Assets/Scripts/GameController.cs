@@ -14,7 +14,7 @@ public class GameController : MonoBehaviour
     void Awake()
     {
         SetGameControllerReferenceOnButtons();
-        playerSide = "X";
+        playerSide = "O";
         timer.OnTimerExpired += OnTimerExpired;
     }
 
@@ -26,7 +26,7 @@ public class GameController : MonoBehaviour
             if (gridSpace != null)
             {
                 gridSpace.SetGameControllerReference(this);
-                if (i == 1)
+                if (i == 0)
                 {
                     playerButton = gridSpace;
                 }
@@ -42,6 +42,7 @@ public class GameController : MonoBehaviour
     {
         return playerSide;
     }
+
 
     public void EndTurn()
     {
@@ -59,8 +60,8 @@ public class GameController : MonoBehaviour
         Debug.Log("Timer expired!");
     }
 
-    
-    
+
+
     private void SelectAndHighlightButtons()
     {
         int computerButtonIndex1;
@@ -83,18 +84,17 @@ public class GameController : MonoBehaviour
             if (playerButton == computerButton1)
             {
                 playerButton.OverlapButton(playerButton.overlapColor);
-                
+                computerButton1.OverlapButton(computerButton1.overlapColor);
                 Debug.Log("Player-chosen button overlaps with a randomly chosen button.");
             }
             else if (playerButton == computerButton2)
             {
                 playerButton.OverlapButton(playerButton.overlapColor);
-                
+                computerButton2.OverlapButton(computerButton2.overlapColor);
                 Debug.Log("Player-chosen button overlaps with a randomly chosen button.");
             }
             else
             {
-
                 Debug.Log("No overlap detected.");
             }
         }

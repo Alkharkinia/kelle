@@ -78,7 +78,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: O
+  m_Text: 
 --- !u!1 &7621772698480716663
 GameObject:
   m_ObjectHideFlags: 0
@@ -182,7 +182,7 @@ MonoBehaviour:
     m_HighlightedColor: {r: 0.44139376, g: 0.8545647, b: 0.8584906, a: 1}
     m_PressedColor: {r: 0.17475082, g: 0.28280318, b: 0.31132078, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.14462443, g: 0.14791021, b: 0.4716981, a: 1}
+    m_DisabledColor: {r: 0.14509808, g: 0.31514326, b: 0.47058824, a: 1}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -227,3 +227,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   button: {fileID: 5715746335839907426}
   buttonText: {fileID: 8102595924661966048}
+  defaultColor: {r: 0, g: 0, b: 1, a: 1}
+  highlightColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  overlapColor: {r: 1, g: 0, b: 0, a: 1}
