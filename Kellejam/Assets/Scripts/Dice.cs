@@ -4,24 +4,25 @@ using UnityEngine;
 
 public class Dice : MonoBehaviour
 {
-   private Sprite[] diceSides;  
+    private Sprite[] diceSides;
+
 
     // Reference to sprite renderer to change sprites
     private SpriteRenderer rend;
 
-	// Use this for initialization
-	private void Start () {
+    // Use this for initialization
+    private void Start() {
 
         // Assign Renderer component
         rend = GetComponent<SpriteRenderer>();
 
         // Load dice sides sprites to array from DiceSides subfolder of Resources folder
         diceSides = Resources.LoadAll<Sprite>("DiceSides/");
-	}
-private void OnMouseDown()
+    }
+    private void OnMouseDown()
     {
         StartCoroutine("RollTheDice");
-        
+
 
 
     }
@@ -56,6 +57,8 @@ private void OnMouseDown()
         // Show final dice value in Console
         Debug.Log(finalSide);
     }
+   
+
 }
     // Update is called once per frame
     
