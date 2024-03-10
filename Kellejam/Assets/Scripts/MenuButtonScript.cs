@@ -7,8 +7,9 @@ public class MenuButtonScript : MonoBehaviour
 {
     public void GoToMenu()
     {
+        Time.timeScale = 1f;
         Debug.Log("Loading Menu");
-        SceneManager.LoadSceneAsync(0);
+        SceneManager.LoadScene("MainMenu");
 
     }
 

@@ -10,6 +10,10 @@ public class GameController : MonoBehaviour
     private GridSpaceScript playerButton;
 
     public Timer timer;
+    public Text winText;
+    public Text loseText;
+
+    public GameObject PickATile;
 
     void Awake()
     {
@@ -26,10 +30,9 @@ public class GameController : MonoBehaviour
             if (gridSpace != null)
             {
                 gridSpace.SetGameControllerReference(this);
-                if (i == 0)
-                {
+               
                     playerButton = gridSpace;
-                }
+                
             }
             else
             {
@@ -58,6 +61,7 @@ public class GameController : MonoBehaviour
     {
         SelectAndHighlightButtons();
         Debug.Log("Timer expired!");
+        PickATile.SetActive(false);
     }
 
 
@@ -85,17 +89,20 @@ public class GameController : MonoBehaviour
             {
                 playerButton.OverlapButton(playerButton.overlapColor);
                 computerButton1.OverlapButton(computerButton1.overlapColor);
+                loseText.text = "You Lost!";
                 Debug.Log("Player-chosen button overlaps with a randomly chosen button.");
             }
             else if (playerButton == computerButton2)
             {
                 playerButton.OverlapButton(playerButton.overlapColor);
                 computerButton2.OverlapButton(computerButton2.overlapColor);
+                loseText.text = "You Lost!";
                 Debug.Log("Player-chosen button overlaps with a randomly chosen button.");
             }
             else
             {
                 Debug.Log("No overlap detected.");
+                winText.text = "You Win!";
             }
         }
         else
