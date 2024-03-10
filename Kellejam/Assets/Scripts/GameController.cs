@@ -7,11 +7,13 @@ public class GameController : MonoBehaviour
 {
     public Text[] buttonList;
     private string playerSide;
+    private string botSide;
     private GridSpaceScript playerButton;
 
     public Timer timer;
     public Text winText;
     public Text loseText;
+
 
     public GameObject PickATile;
 
@@ -19,6 +21,7 @@ public class GameController : MonoBehaviour
     {
         SetGameControllerReferenceOnButtons();
         playerSide = "O";
+       
         timer.OnTimerExpired += OnTimerExpired;
     }
 
@@ -45,6 +48,8 @@ public class GameController : MonoBehaviour
     {
         return playerSide;
     }
+
+    
 
 
     public void EndTurn()

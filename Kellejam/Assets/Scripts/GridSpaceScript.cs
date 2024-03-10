@@ -35,7 +35,6 @@ public class GridSpaceScript : MonoBehaviour
             buttonPressed = true;
             buttonText.text = gameController.GetPlayerSide();
             button.interactable = false;
-
             gameController.EndTurn();
         }
         else
@@ -54,6 +53,7 @@ public class GridSpaceScript : MonoBehaviour
         var colors = button.colors;
         colors.normalColor = highlightColor;
         button.colors = colors;
+        buttonText.text = "!";
         Debug.Log("HighlightButton called - Color changed to: " + highlightColor);
     }
 
@@ -61,6 +61,7 @@ public class GridSpaceScript : MonoBehaviour
     public void OverlapButton(Color overlapColor)
     {
         buttonImage.color = overlapColor;
+        buttonText.text = "X";
         Debug.Log("OverlapButton called - Color changed to: " + overlapColor);
     }
 
